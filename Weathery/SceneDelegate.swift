@@ -21,9 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
-        
-        let navigationController = UINavigationController(rootViewController: WeatherViewController())
-        window?.rootViewController = navigationController
+        window?.rootViewController = WeatherViewController()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
