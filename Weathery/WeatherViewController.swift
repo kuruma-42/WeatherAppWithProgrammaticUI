@@ -91,7 +91,7 @@ extension WeatherViewController {
         // weather
         conditionImageView.translatesAutoresizingMaskIntoConstraints = false
         conditionImageView.image = UIImage(systemName: "sun.max")
-        conditionImageView.tintColor = .label
+        conditionImageView.tintColor = .gray
         
         temperatureLabel.translatesAutoresizingMaskIntoConstraints = false
         temperatureLabel.font = UIFont.systemFont(ofSize: 80)
@@ -100,20 +100,22 @@ extension WeatherViewController {
         cityLabel.translatesAutoresizingMaskIntoConstraints = false
         cityLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
         cityLabel.text = "Cupertino"
+        cityLabel.textColor = UIColor.lightGray
 
         // background
         backgroundView.translatesAutoresizingMaskIntoConstraints = false
-        backgroundView.image = UIImage(named: "day-background")
+        backgroundView.image = UIImage(named: "day-mountain")
         backgroundView.contentMode = .scaleAspectFill
     }
     
     private func makeTemperatureText(with temperature: String) -> NSAttributedString {
         
         var boldTextAttributes = [NSAttributedString.Key: AnyObject]()
-        boldTextAttributes[.foregroundColor] = UIColor.label
+        boldTextAttributes[.foregroundColor] = UIColor.gray
         boldTextAttributes[.font] = UIFont.boldSystemFont(ofSize: 100)
 
         var plainTextAttributes = [NSAttributedString.Key: AnyObject]()
+        plainTextAttributes[.foregroundColor] = UIColor.gray
         plainTextAttributes[.font] = UIFont.systemFont(ofSize: 80)
 
         let text = NSMutableAttributedString(string: temperature, attributes: boldTextAttributes)
